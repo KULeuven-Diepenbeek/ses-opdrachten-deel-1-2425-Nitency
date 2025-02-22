@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 Auteur: Ruben Bormans 
-=======
-Auteur: Logan Homolka 
->>>>>>> master
  
 CANDY CRUSH spelregels 
  
