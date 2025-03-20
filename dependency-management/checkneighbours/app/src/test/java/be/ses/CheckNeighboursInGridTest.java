@@ -159,4 +159,23 @@ public class CheckNeighboursInGridTest {
         assertThat(result).withFailMessage("Verwachte lege lijst wanneer index buiten de array ligt")
             .isEmpty();
     }
+
+    @Test
+    public void gegevenNullGrid_wanneerGetSameNeighboursIdsCalled_danExceptionGeworpen() {
+    // Arrange
+    List<Integer> grid = null;
+    int width = 3;
+    int height = 3;
+    int indexToCheck = 4;
+
+    // When
+    Throwable thrown = catchThrowable(() -> {
+        CheckNeighboursInGrid.getSameNeighboursIds(grid, width, height, indexToCheck);
+    });
+
+    // Then
+    assertThat(thrown)
+        .isInstanceOf(NullPointerException.class)
+        .hasMessageContaining("Grid kan niet null zijn");
+}
 }

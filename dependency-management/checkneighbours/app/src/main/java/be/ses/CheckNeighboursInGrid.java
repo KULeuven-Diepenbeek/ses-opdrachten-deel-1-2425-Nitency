@@ -13,9 +13,13 @@ public class CheckNeighboursInGrid {
      * @param indexToCheck - Specifies the index of the element which neighbours that need to be checked
      */
     public static Iterable<Integer> getSameNeighboursIds(Iterable<Integer> grid, int width, int height, int indexToCheck) {
+        if (grid == null) {
+            throw new NullPointerException("Grid kan niet null zijn");
+        }
+        
         List<Integer> result = new ArrayList<>();
         List<Integer> gridList = convertIterableToList(grid);
-        
+
         if (gridList.size() != width * height || indexToCheck < 0 || indexToCheck >= gridList.size()) {
             return result;
         }
