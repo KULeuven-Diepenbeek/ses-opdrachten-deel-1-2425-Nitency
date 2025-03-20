@@ -2,11 +2,9 @@ name: Java CI for checkneighbors
 
 on:
   push:
-    paths:
-      - 'dependency-management/checkneighbours/**'
+    branches: [ "main" ]
   pull_request:
-    paths:
-      - 'dependency-management/checkneighbours/**'
+    branches: [ "main" ]
 
 jobs:
   test:
