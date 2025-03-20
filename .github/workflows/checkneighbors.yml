@@ -26,8 +26,11 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
+    - name: Debug directory structure
+      run: ls -la && find . -name "gradlew" -type f
+      
     - name: Grant execute permissions for gradlew
-      run: chmod +x
+      run: chmod +x dependency_management/checkneighbors/gradlew
 
     - name: Run tests with gradle
       run: ./gradlew test
