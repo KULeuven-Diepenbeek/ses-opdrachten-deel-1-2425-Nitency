@@ -16,34 +16,22 @@ public class CheckNeighboursInGrid {
         List<Integer> result = new ArrayList<>();
         List<Integer> gridList = convertIterableToList(grid);
         
-        // Validate input parameters
         if (gridList.size() != width * height || indexToCheck < 0 || indexToCheck >= gridList.size()) {
-            return result; // Return empty list for invalid input
+            return result;
         }
         
-        // Get the value of the element at indexToCheck
         int valueToCheck = gridList.get(indexToCheck);
         
-        // Calculate the row and column of the element
         int row = indexToCheck / width;
         int col = indexToCheck % width;
         
-        // Check the 8 possible neighbors (if they exist)
-        // Top-left
         checkAndAddNeighbor(gridList, width, row-1, col-1, valueToCheck, result);
-        // Top
         checkAndAddNeighbor(gridList, width, row-1, col, valueToCheck, result);
-        // Top-right
         checkAndAddNeighbor(gridList, width, row-1, col+1, valueToCheck, result);
-        // Left
         checkAndAddNeighbor(gridList, width, row, col-1, valueToCheck, result);
-        // Right
         checkAndAddNeighbor(gridList, width, row, col+1, valueToCheck, result);
-        // Bottom-left
         checkAndAddNeighbor(gridList, width, row+1, col-1, valueToCheck, result);
-        // Bottom
         checkAndAddNeighbor(gridList, width, row+1, col, valueToCheck, result);
-        // Bottom-right
         checkAndAddNeighbor(gridList, width, row+1, col+1, valueToCheck, result);
         
         return result;
@@ -57,13 +45,12 @@ public class CheckNeighboursInGrid {
         }
         return list;
     }
-    
-    // Helper method to check if a neighbor exists, has the same value, and add its index to the result
+
     private static void checkAndAddNeighbor(List<Integer> grid, int width, int row, int col, int valueToCheck, List<Integer> result) {
-        // Check if the neighbor coordinates are valid
+        // Check of coordinaten bestaan
         if (row >= 0 && col >= 0 && row < grid.size() / width && col < width) {
             int neighborIndex = row * width + col;
-            // Check if the neighbor has the same value
+            // Check als neighbor zelfde waarde is
             if (grid.get(neighborIndex) == valueToCheck) {
                 result.add(neighborIndex);
             }
