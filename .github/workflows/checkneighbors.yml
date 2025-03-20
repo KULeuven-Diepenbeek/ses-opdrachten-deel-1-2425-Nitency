@@ -27,7 +27,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Grant execute permissions for gradlew
-      run: chmod +x dependency-management/checkneighbours/gradlew
+      run: chmod +x
 
     - name: Run tests with gradle
       run: ./gradlew test
