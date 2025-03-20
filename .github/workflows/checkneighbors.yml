@@ -30,6 +30,4 @@ jobs:
       run: chmod +x dependency-management/checkneighbours/gradlew
 
     - name: Run tests with gradle
-      run: |
-        cd dependency-management/checkneighbours
-        ./gradlew test --tests be.ses.CheckNeighboursInGridTest
+      run: ./gradlew test
